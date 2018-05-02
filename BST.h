@@ -26,3 +26,35 @@ class Node{
     Node* getRight(){return right;};
     char getData(){return data;};
 };
+
+class Tree{
+    Node* root = NULL;
+    public:
+    Tree(){root = NULL;}
+    void insert(Node* tmp, char c){
+        Node* n = new Node();
+        n->setData(c);
+        if (root == NULL){//empty case
+            //  tmp->setRoot(n);
+            root = n;
+        }
+        else{//not empty
+            if(c < tmp->getData()){
+                if (tmp->getLeft()== NULL){
+                    tmp->setLeft(n);//set to new node
+                    return;
+                }
+                else insert(tmp->getLeft(),c);//finally
+            }
+            if(c > tmp->getData()){
+                if (tmp->getRight()== NULL){
+                    tmp->setRight(n);
+                 return;
+                }
+                else insert(tmp->getRight(), c);
+            }
+            if (c == tmp->getData()){
+                return;
+            }
+        }
+    }
