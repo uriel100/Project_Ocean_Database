@@ -14,6 +14,7 @@ class Node{
     Node* parent = NULL;
     Node* root = NULL;
     char data;
+    string name;
     public:
     Node(){}
     void setLeft(Node* l){left = l;};
@@ -21,9 +22,11 @@ class Node{
     void setRoot(Node* rt){root = rt;}
     void setParent(Node* p){parent = p;};
     void setData(char sad){data = sad;};
+    void setName(string x){data = x;};
     Node* getRoot(){return root;};
     Node* getLeft(){return left;};
     Node* getRight(){return right;};
+    string getName(){return name;};
     char getData(){return data;};
 };
 
