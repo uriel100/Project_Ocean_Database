@@ -13,7 +13,7 @@ class Node{
     Node* right = NULL;
     Node* parent = NULL;
     Node* root = NULL;
-    char data;
+    //char data;
     string name;
     public:
     Node(){}
@@ -21,13 +21,17 @@ class Node{
     void setRight(Node* r){right = r;};
     void setRoot(Node* rt){root = rt;}
     void setParent(Node* p){parent = p;};
-    void setData(char sad){data = sad;};
-    void setName(string x){data = x;};
+    void setData(string sad){name = sad;};
+    void setFacts(string f){facts = f;};
+    void setAddress(string a){address = a;};
+    //void setName(string x){data = x;};
     Node* getRoot(){return root;};
     Node* getLeft(){return left;};
     Node* getRight(){return right;};
-    string getName(){return name;};
-    char getData(){return data;};
+    //string getName(){return name;};
+    string getFacts(){return facts;};
+    string getAddress(){return address;};
+    string getData(){return name;};
 };
 
 class Tree{
@@ -62,7 +66,7 @@ class Tree{
         }
     }
     
-     bool search1(Node* n2, char k){
+     bool searchName(Node* n2, string k){
         if(n2){
             if(n2->getData() == k)
                 return true;
@@ -74,7 +78,7 @@ class Tree{
             }
         }
     }
-     bool search2(Node* n2, char k){
+     bool searchAddress(Node* n2, string k){
 
         if(!n2){return false;}
 
