@@ -61,4 +61,9 @@ class Tree{
             }
         }
     }
+    
+     bool search2(Node* n2, char k){
+
+        if(!n2){return false;}
+
 };
