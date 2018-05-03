@@ -62,6 +62,18 @@ class Tree{
         }
     }
     
+     bool search1(Node* n2, char k){
+        if(n2){
+            if(n2->getData() == k)
+                return true;
+            else{
+                if(k < n2->getData())
+                    search1(n2->getLeft(), k);
+                else
+                    search1(n2->getRight(),k);
+            }
+        }
+    }
      bool search2(Node* n2, char k){
 
         if(!n2){return false;}
