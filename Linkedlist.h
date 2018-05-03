@@ -15,7 +15,7 @@ void die(string s = "") {
     exit(1);
 }
 
-Class LL {
+class LL {
 private:
   int animal = 0;
   string address;
