@@ -14,6 +14,8 @@ class Node{
     Node* parent = NULL;
     Node* root = NULL;
     //char data;
+    string facts;
+    string address;
     string name;
     public:
     Node(){}
