@@ -68,7 +68,7 @@ class Tree{
         }
     }
     
-     Node search1(Node* n2, string k){
+     Node *search1(Node* n2, string k){
         if(n2){
             if(n2->getData() == k)
                 return n2;
@@ -80,12 +80,14 @@ class Tree{
             }
         }
     }
-     bool searchAddress(Node* n2, string k){
+     string searchAddress(Node* n2, string k){
 
         if(!n2){return false;}
          if(k == n2 -> getData()){
             return n2->getAddress();
         }
-            //Node* nptr = search1(n2, k); error
-            //return nptr -> getAddress();
+          Node* tmp = NULL;
+            tmp = search1(n2, k);
+            return tmp -> getAddress();
+
 };
