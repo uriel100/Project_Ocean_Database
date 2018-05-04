@@ -86,6 +86,6 @@ class Tree{
          if(k == n2 -> getData()){
             return n2->getAddress();
         }
-            Node* nptr = search1(n2, k);
-            return nptr -> getAddress();
+            //Node* nptr = search1(n2, k); error
+            //return nptr -> getAddress();
 };
