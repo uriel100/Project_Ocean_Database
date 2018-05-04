@@ -82,12 +82,23 @@ class Tree{
     }
      string searchAddress(Node* n2, string k){
 
-        if(!n2){return false;}
+        //if(!n2){return false;} //goes in main
          if(k == n2 -> getData()){
             return n2->getAddress();
         }
           Node* tmp = NULL;
             tmp = search1(n2, k);
             return tmp -> getAddress();
+         
+       string searchFacts(Node* n2, string k){
+        //if(!n2){return false;} //goes in main
+        if(k == n2 -> getData()){
+            return n2->getFacts();
+        }
+        Node* tmp = NULL;
+        tmp = search1(n2, k);
+        return tmp -> getFacts();
+    }
+
 
 };
