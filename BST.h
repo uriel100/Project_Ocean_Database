@@ -18,7 +18,7 @@ class Node{
     string address;
     string name;
     public:
-    Node(){}
+    Node( string new_name, string new_facts){ name = new_name; facts = new_facts;}
     void setLeft(Node* l){left = l;};
     void setRight(Node* r){right = r;};
     void setRoot(Node* rt){root = rt;}
@@ -39,7 +39,25 @@ class Node{
 class Tree{
     Node* root = NULL;
     public:
-    Tree(){root = NULL;}
+    Tree(){root = NULL;
+    new_node = new Node("Polar Bear", "facts");
+    insert(Node* new_node,'P');
+    new_node = new Node("Jellyfish", "facts");
+    insert(Node* new_node,'J');
+    new_node = new Node("Great White Shark", "facts");
+    insert(Node* new_node,'G');
+    new_node = new Node("East Pacific Red Octopus", "facts");
+    insert(Node* new_node,'E');
+    new_node = new Node("Sea Otter", "facts");
+    insert(Node* new_node,'O');
+    new_node = new Node("Sea Turtle", "facts");
+    insert(Node* new_node,'T');
+    new_node = new Node("Starfish", "facts");
+    insert(Node* new_node,'S');
+    new_node = new Node("Whale Shark", "facts");
+    insert(Node* new_node,'W');
+          
+     }
     void insert(Node* tmp, char c){
         Node* n = new Node();
         n->setData(c);
@@ -79,17 +97,7 @@ class Tree{
                     search1(n2->getRight(),k);
             }
         }
-    }
-     string searchAddress(Node* n2, string k){
-
-        //if(!n2){return false;} //goes in main
-         if(k == n2 -> getData()){
-            return n2->getAddress();
-        }
-          Node* tmp = NULL;
-            tmp = search1(n2, k);
-            return tmp -> getAddress();
-         
+    }     
        string searchFacts(Node* n2, string k){
         //if(!n2){return false;} //goes in main
         if(k == n2 -> getData()){
