@@ -1,8 +1,8 @@
-//Uriel( sucks by DENISE) - Figuring out how to connect to the internet to search facts of animals & their nearest location.
+Done //Uriel( sucks by DENISE) - Creating a sever and client that the user will connect to use the program
 
 Christiana - Making a BST to hold three facts about 20 marine animals. ( In ABC order.)
 
-Denise - making a min-heap that will hold the closet location the marine animals.
+Denise - making a linked-list that will hold the closet location the marine animals.
 
 Uriel - Will be making main and piecing everything together (liar from Denise)
 
