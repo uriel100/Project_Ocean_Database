@@ -44,13 +44,13 @@ class Tree{
     insert(new_node, 2);
     new_node = new Node("East Pacific Red Octopus", "facts");
     insert(new_node, 1);
-    new_node = new Node("Sea Otter", "facts");
+    new_node = new Node("Sea Otter", " ");
     insert(new_node, 5);
-    new_node = new Node("Sea Turtle", "facts");
+    new_node = new Node("Sea Turtle", " Sea turtles have stronger muscles than humans.Sea turtles are one of the Earth's most ancient creatures. The seven species that can be found today have been around for 110  million years, since the time of the dinosaurs. Some can live to be 100 years old.");
     insert(new_node, 6);
-    new_node = new Node("Starfish", "facts");
+    new_node = new Node("Starfish", " Starfish do not have a brain or any blood. The average lifespan of a sea star is 35 years and can regenerate lost limbs. Starfish are not fish they are related to sand dollars and sea urchins.");
     insert(new_node, 7);
-    new_node = new Node("Whale Shark", "facts");
+    new_node = new Node("Whale Shark", " Whale Sharks are the biggest fish in the sea. They open their mouths, let water come in and their bodies filter out food, and release the water and any debris back into the ocean. Whale Sharks can live 100 to 150 years. Although massive, whale sharks are docile fish and sometimes allow swimmers to hitch a ride. They are currently listed as a vulnerable species; however, they continue to be hunted.");
     insert(new_node, 8);
           
      }
