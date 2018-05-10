@@ -18,7 +18,7 @@ class Node{
     char data;
     public:
     Node(){}
-    Node(string new_name, string new_facts){ name = new_name; facts = new_facts;}
+    Node(string new_name, string new_facts, char new_data){ name = new_name; facts = new_facts; data = new_data;}
     void setLeft(Node* l){left = l;};
     void setRight(Node* r){right = r;};
     void setRoot(Node* rt){root = rt;}
@@ -36,23 +36,47 @@ class Tree{
     Node* root = NULL;
     public:
     Tree(){root = NULL;
-    new_node = new Node("Polar Bear", "Polar bears are the largest land carnivores in the world. Did you know that a polar bear’s fur isn’t white? It’s actually transparent with a hollow core that reflects light. This helps the bears blend in with their surroundings – a useful trick, especially when hunting wary seals! Scientists predict that American polar bears could face extinction in the next 50 years if urgent actions aren't taken to help them survive. You can help. Adopt a polar bear.");
-    insert(new_node, 4);
-    new_node = new Node("Jellyfish", "Jellyfish don't have brains and are 95% water. If a jellyfish is cut in two, the pieces of the jellyfish can regenerate and create two new organisms. An assemblage of jellies is a swarm or, better yet, a smack.");
-    insert(new_node, 3);
-    new_node = new Node("Great White Shark", "The great white is at the top of the food chain and has few threats in the ocean. Great white sharks have about 300 teeth, arranged in many rows. After mating the female great white develops several eggs which hatch in her womb. The newly-hatched shark pups feed on unfertilized eggs in the womb as they develop before being born.");
-    insert(new_node, 2);
-    new_node = new Node("East Pacific Red Octopus", "The plural of octopus is octopuses, not octopi, octopodes, or octopussies. Red octopuses have boneless, highly flexible and soft bodies that allow them to squeeze through very small spaces, even those as small as one of their eyeballs! Octopuses can sometimes suffer from autophagy, or self-cannibalism, due to stress. That is what is described as eating its own arms.");
-    insert(new_node, 1);
-    new_node = new Node("Sea Otter", "Sea otters have the thickest fur of any mammal in the animal kingdom. The layers manage to trap air next to the otter’s skin, which keeps the otters dry and warm and also helps with buoyancy—pups have so much air trapped in there, they actually can’t dive under water, even if they want to. A mother will often wrap the babies in kelp to keep them in one place while she hunts.");
-    insert(new_node, 5);
-    new_node = new Node("Sea Turtle", "Sea turtles have stronger muscles than humans. Sea turtles are one of the Earth's most ancient creatures. The seven species that can be found today have been around for 110  million years, since the time of the dinosaurs. Some can live to be 100 years old.");
-    insert(new_node, 6);
-    new_node = new Node("Starfish", "Starfish do not have a brain or any blood. The average lifespan of a sea star is 35 years and can regenerate lost limbs. Starfish are not fish they are related to sand dollars and sea urchins.");
-    insert(new_node, 7);
-    new_node = new Node("Whale Shark", "Whale Sharks are the biggest fish in the sea. They open their mouths, let water come in and their bodies filter out food, and release the water and any debris back into the ocean. Whale Sharks can live 100 to 150 years. Although massive, whale sharks are docile fish and sometimes allow swimmers to hitch a ride. They are currently listed as a vulnerable species; however, they continue to be hunted.");
-    insert(new_node, 8);      
+    new_node = new Node("Polar Bear", "Polar bears are the largest land carnivores in the world. Did you know that a polar bear’s fur isn’t white? It’s actually transparent with a hollow core that reflects light. This helps the bears blend in with their surroundings – a useful trick, especially when hunting wary seals! Scientists predict that American polar bears could face extinction in the next 50 years if urgent actions aren't taken to help them survive. You can help. Adopt a polar bear.", 4);
+    insert(root, new_node);
+    new_node = new Node("Jellyfish", "Jellyfish don't have brains and are 95% water. If a jellyfish is cut in two, the pieces of the jellyfish can regenerate and create two new organisms. An assemblage of jellies is a swarm or, better yet, a smack.",3);
+    insert(root, new_node);
+    new_node = new Node("Great White Shark", "The great white is at the top of the food chain and has few threats in the ocean. Great white sharks have about 300 teeth, arranged in many rows. After mating the female great white develops several eggs which hatch in her womb. The newly-hatched shark pups feed on unfertilized eggs in the womb as they develop before being born.", 2);
+    insert(root, new_node);
+    new_node = new Node("East Pacific Red Octopus", "The plural of octopus is octopuses, not octopi, octopodes, or octopussies. Red octopuses have boneless, highly flexible and soft bodies that allow them to squeeze through very small spaces, even those as small as one of their eyeballs! Octopuses can sometimes suffer from autophagy, or self-cannibalism, due to stress. That is what is described as eating its own arms.", 1);
+    insert(root, new_node);
+    new_node = new Node("Sea Otter", "Sea otters have the thickest fur of any mammal in the animal kingdom. The layers manage to trap air next to the otter’s skin, which keeps the otters dry and warm and also helps with buoyancy—pups have so much air trapped in there, they actually can’t dive under water, even if they want to. A mother will often wrap the babies in kelp to keep them in one place while she hunts.", 5 );
+    insert(root, new_node);
+    new_node = new Node("Sea Turtle", "Sea turtles have stronger muscles than humans. Sea turtles are one of the Earth's most ancient creatures. The seven species that can be found today have been around for 110  million years, since the time of the dinosaurs. Some can live to be 100 years old.", 6);
+    insert(root, new_node);
+    new_node = new Node("Starfish", "Starfish do not have a brain or any blood. The average lifespan of a sea star is 35 years and can regenerate lost limbs. Starfish are not fish they are related to sand dollars and sea urchins.", 7);
+    insert(root, new_node);
+    new_node = new Node("Whale Shark", "Whale Sharks are the biggest fish in the sea. They open their mouths, let water come in and their bodies filter out food, and release the water and any debris back into the ocean. Whale Sharks can live 100 to 150 years. Although massive, whale sharks are docile fish and sometimes allow swimmers to hitch a ride. They are currently listed as a vulnerable species; however, they continue to be hunted.", 8);
+    insert(root, new_node);      
      }
+    
+     void insert(Node* root, Node* x){
+        if (root == NULL){
+            root = x;
+        }
+        else if (x->getData() < root->getData()){
+            if(root->getLeft() == NULL){
+                root-> setLeft(x);
+            }
+            else
+                insert(root->getLeft(), x);
+        }
+        else if( x->getData() > root->getData()){
+            if(root->getRight() == NULL){
+                root-> setRight(x);
+            }
+            else
+                insert(root->getRight(),x);
+        }
+        else
+            return;
+    }
+
+    
     void insert(Node* tmp, char c){
         Node* n = tmp;
         n->setData(c);
