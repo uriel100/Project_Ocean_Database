@@ -107,3 +107,22 @@ class Tree{
 
 
 };
+/*string myFacts;
+        if(!n2)
+            return "Null";
+        if (k == n2 -> getData()) {
+            myFacts = n2->getFacts();
+        }
+
+        //Node* tmp = NULL;
+        //tmp = search1(n2, k);
+        else{
+            if(k > n2->getData())
+                myFacts = searchFacts(n2->getRight(),k);
+            else
+                myFacts = searchFacts(n2->getLeft(),k);
+        }
+        return  myFacts;//tmp -> getFacts();
+
+    }
+*/
