@@ -35,7 +35,7 @@ class Node{
 class Tree{
     Node* root = NULL;
     public:
-    Tree(){root = NULL;
+    Tree(){Node* new_node = NULL;
     new_node = new Node("Polar Bear", "Polar bears are the largest land carnivores in the world. Did you know that a polar bear’s fur isn’t white? It’s actually transparent with a hollow core that reflects light. This helps the bears blend in with their surroundings – a useful trick, especially when hunting wary seals! Scientists predict that American polar bears could face extinction in the next 50 years if urgent actions aren't taken to help them survive. You can help. Adopt a polar bear.", 4);
     insert(root, new_node);
     new_node = new Node("Jellyfish", "Jellyfish don't have brains and are 95% water. If a jellyfish is cut in two, the pieces of the jellyfish can regenerate and create two new organisms. An assemblage of jellies is a swarm or, better yet, a smack.",3);
